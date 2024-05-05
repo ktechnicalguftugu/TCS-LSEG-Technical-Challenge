@@ -9,7 +9,7 @@ def get_consecutive_data_points(file_path):
     # Please ensure atleast 30 data points are available 
     if len(data) < 30:
         return None
-    # Choose a randon starting index within the valid data range
+    # Choose a random starting index within the valid data range
     start_index = np.random.randint(0, len(data) - 29)
     selected_data = data.iloc[start_index:start_index+30]
 
@@ -41,8 +41,8 @@ def process_files(input_files):
                 output_file = os.path.splitext(file)[0] + "outliers.csv"
                 outliers.to_csv(output_file, index=False)
         except Exception as e:
-            printf(f"Error processing file {file}: {e}")
+            print(f"Error processing file {file}: {e}")
 
 # Example usages 
-input_files = ['stock_prices1.csv' , 'stock_prices2.csv'] # List of file paths 
+input_files = ['stock_prices1.csv'] # List of file paths 
 process_files(input_files)
